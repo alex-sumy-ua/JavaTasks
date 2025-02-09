@@ -35,7 +35,7 @@ public class Main {
         int[] result = twoSum(nums, target);
         System.out.println("Indices: [" + result[0] + ", " + result[1] + "]");
 
-// *** 2 - Valid Parantheses ***
+// *** 2 - Valid Parentheses ***
         {
             System.out.println(isValid("()"));        // true
             System.out.println(isValid("()[]{}"));    // true
@@ -64,7 +64,7 @@ public class Main {
         System.out.println(isBalanced(input2)); // false
         System.out.println(isBalanced(input3)); // true
 }
-// *** 6 - isPalindrome ***
+// *** 6a - isPalindrome ***
         String test1 = "mamam"; // true
         String test2 = "MAMam"; // true
         String test3 = "mama"; // false
@@ -77,7 +77,7 @@ public class Main {
         System.out.println(isPalindrome(test3));
         System.out.println(isPalindrome(test4));
         System.out.println(isPalindrome(test5));
-// *** 6 - isPermutationOfPalindrome ***
+// *** 6b - isPermutationOfPalindrome ***
         System.out.println("Task 6b:");
         System.out.println(isPermutationOfPalindrome("Tact Coa")); // true
         System.out.println(isPermutationOfPalindrome("Tact Coal")); // false
