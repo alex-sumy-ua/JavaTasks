@@ -1,5 +1,6 @@
 package org.assessment_preparation;
 
+import static org.assessment_preparation.cutting_paper_squares.CuttingPaper.cuttingPaper;
 import static org.assessment_preparation.balanced_brackets.BalancedBrackets.isBalanced;
 import static org.assessment_preparation.cells_game.GameWithCells.gameWithCells;
 import static org.assessment_preparation.latest_time_finder.LatestTimeFinder.findLatestTime;
@@ -30,9 +31,9 @@ public class Main {
 
 // *** 1 - Two Sum ***
 
-        int[] nums = {2, 7, 11, 15};
+        int[] numbers = {2, 7, 11, 15};
         int target = 22;
-        int[] result = twoSum(nums, target);
+        int[] result = twoSum(numbers, target);
         System.out.println("Indices: [" + result[0] + ", " + result[1] + "]");
 
 // *** 2 - Valid Parentheses ***
@@ -100,7 +101,23 @@ public class Main {
 
 // *** 10 - Prime Count ***
         System.out.println("Task 10:");
-        long number = 614889782588491410l;
+        long number = 614889782588491410L;
         System.out.println("The number of primes for number = " + number + " is: " + primeCount(number));
+
+// *** 11 - Cutting Paper ***
+        System.out.println("Task 11: ");
+        int nn = 1;
+        int mm = 3;
+        System.out.println("The number of cuts for the paper n=" + nn + ", m=" + mm + " is: " + cuttingPaper(nn, mm) + " cuts.");
+
+
+
+
+
+
+
+
+
+
     }
 }
