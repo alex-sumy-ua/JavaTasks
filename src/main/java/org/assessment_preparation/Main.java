@@ -1,5 +1,9 @@
 package org.assessment_preparation;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import static org.assessment_preparation.cutting_paper_squares.CuttingPaper.cuttingPaper;
 import static org.assessment_preparation.balanced_brackets.BalancedBrackets.isBalanced;
 import static org.assessment_preparation.cells_game.GameWithCells.gameWithCells;
@@ -10,13 +14,15 @@ import static org.assessment_preparation.non_repeated_character.FirstUniqueChara
 import static org.assessment_preparation.palindrome.Palindrome.isPalindrome;
 import static org.assessment_preparation.palindrome.Palindrome.isPermutationOfPalindrome;
 import static org.assessment_preparation.ptime_count.PrimeCount.primeCount;
+import static org.assessment_preparation.reverse_game.ReverseGame.newIndex;
+import static org.assessment_preparation.summing_series.SummingSeries.summingSeries;
 import static org.assessment_preparation.twosum.TwoSum.twoSum;
 import static org.assessment_preparation.valid_parentheses.ValidParentheses.isValid;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
 //        // to see how IntelliJ IDEA suggests fixing it.
 //        System.out.printf("Hello and welcome!");
@@ -110,9 +116,27 @@ public class Main {
         int mm = 3;
         System.out.println("The number of cuts for the paper n=" + nn + ", m=" + mm + " is: " + cuttingPaper(nn, mm) + " cuts.");
 
+// *** 12 - Summing Series ***
+        System.out.println("Task 12:");
+        long nnn = 2L;
+        int t = 7;
+        System.out.println("The mod of summing series S mod pow(10, " + t + ") + " + nnn + " is: " + summingSeries(nnn, t));
 
-
-
+// *** 13 - Reverse Game ***
+        System.out.println("Task 13:");
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        int tt = Integer.parseInt(bufferedReader.readLine().trim());
+        if (t > 0) {
+            int nnnn = 0;
+            int k = 0;
+            for (int j = 1; j <= tt; j++) {
+                String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+                nnnn = Integer.parseInt(firstMultipleInput[0]);
+                k = Integer.parseInt(firstMultipleInput[1]);
+                System.out.println(newIndex(nnnn, k));
+            }
+        }
+        bufferedReader.close();
 
 
 
