@@ -1,8 +1,6 @@
 package org.assessment_preparation;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 import static org.assessment_preparation.cutting_paper_squares.CuttingPaper.cuttingPaper;
 import static org.assessment_preparation.balanced_brackets.BalancedBrackets.isBalanced;
@@ -15,6 +13,7 @@ import static org.assessment_preparation.palindrome.Palindrome.isPalindrome;
 import static org.assessment_preparation.palindrome.Palindrome.isPermutationOfPalindrome;
 import static org.assessment_preparation.ptime_count.PrimeCount.primeCount;
 import static org.assessment_preparation.reverse_game.ReverseGame.newIndex;
+import static org.assessment_preparation.strange_grid.StrangeGrid.node;
 import static org.assessment_preparation.summing_series.SummingSeries.summingSeries;
 import static org.assessment_preparation.twosum.TwoSum.twoSum;
 import static org.assessment_preparation.valid_parentheses.ValidParentheses.isValid;
@@ -124,6 +123,11 @@ public class Main {
 
 // *** 13 - Reverse Game ***
         System.out.println("Task 13:");
+
+        // 1
+        // 3 1
+        // > 2
+
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int tt = Integer.parseInt(bufferedReader.readLine().trim());
         if (t > 0) {
@@ -133,11 +137,35 @@ public class Main {
                 String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
                 nnnn = Integer.parseInt(firstMultipleInput[0]);
                 k = Integer.parseInt(firstMultipleInput[1]);
-                System.out.println(newIndex(nnnn, k));
+                System.out.println("New index: " + newIndex(nnnn, k));
             }
         }
-        bufferedReader.close();
+//        bufferedReader.close();
 
+// *** 14 - Strange Grid ***
+        System.out.println("Task 14:");
+        // 6 3
+        // > 25
+
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        int r = Integer.parseInt(firstMultipleInput[0]);
+
+        int c = Integer.parseInt(firstMultipleInput[1]);
+
+        long result14 = node(r, c);
+
+        System.out.println("Result: " + result14);
+
+
+
+
+
+
+
+
+
+        bufferedReader.close();
 
 
 
