@@ -24,3 +24,11 @@
 
 // *** 11 - Cutting Paper Squares ***
 
+// *** 12 - Summing Series ***
+
+// *** 13 - Reverse Game ***
+
+// *** 14 - Strange Grid ***
+
+// *** 15 - Cut the Sticks ***
+
