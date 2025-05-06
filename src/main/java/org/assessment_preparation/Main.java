@@ -169,7 +169,7 @@ public class Main {
         // > 6
         // > 4
         // > 1
-        
+
         System.out.println("Task 15:");
         System.out.println("Enter stick lengths (space separated):");
 

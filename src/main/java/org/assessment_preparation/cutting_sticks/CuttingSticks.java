@@ -1,10 +1,8 @@
 package org.assessment_preparation.cutting_sticks;
 
-import javax.xml.transform.Result;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
