@@ -1,10 +1,14 @@
 package org.assessment_preparation;
 
 import java.io.*;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.assessment_preparation.cutting_paper_squares.CuttingPaper.cuttingPaper;
 import static org.assessment_preparation.balanced_brackets.BalancedBrackets.isBalanced;
 import static org.assessment_preparation.cells_game.GameWithCells.gameWithCells;
+import static org.assessment_preparation.cutting_sticks.CuttingSticks.cutTheSticks;
 import static org.assessment_preparation.latest_time_finder.LatestTimeFinder.findLatestTime;
 import static org.assessment_preparation.longest_sequence.LongestConsecutiveSequence.longestConsecutiveSequence;
 import static org.assessment_preparation.min_height_triangle.MinimumHeightTriangle.lowestTriangle;
@@ -129,41 +133,55 @@ public class Main {
         // > 2
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        int tt = Integer.parseInt(bufferedReader.readLine().trim());
-        if (t > 0) {
-            int nnnn = 0;
-            int k = 0;
-            for (int j = 1; j <= tt; j++) {
-                String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
-                nnnn = Integer.parseInt(firstMultipleInput[0]);
-                k = Integer.parseInt(firstMultipleInput[1]);
-                System.out.println("New index: " + newIndex(nnnn, k));
-            }
-        }
+//        int tt = Integer.parseInt(bufferedReader.readLine().trim());
+//        if (t > 0) {
+//            int nnnn = 0;
+//            int k = 0;
+//            for (int j = 1; j <= tt; j++) {
+//                String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+//                nnnn = Integer.parseInt(firstMultipleInput[0]);
+//                k = Integer.parseInt(firstMultipleInput[1]);
+//                System.out.println("New index: " + newIndex(nnnn, k));
+//            }
+//        }
+////        bufferedReader.close();
+//
+//// *** 14 - Strange Grid ***
+//        System.out.println("Task 14:");
+//        // 6 3
+//        // > 25
+//
+//        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+//
+//        int r = Integer.parseInt(firstMultipleInput[0]);
+//
+//        int c = Integer.parseInt(firstMultipleInput[1]);
+//
+//        long result14 = node(r, c);
+//
+//        System.out.println("Result: " + result14);
+//
 //        bufferedReader.close();
 
-// *** 14 - Strange Grid ***
-        System.out.println("Task 14:");
-        // 6 3
-        // > 25
+// *** 15 - Cut the Sticks ***
+        // 1 2 3 4 3 3 2 1
+        // > 8
+        // > 6
+        // > 4
+        // > 1
+        
+        System.out.println("Task 15:");
+        System.out.println("Enter stick lengths (space separated):");
 
-        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+        // Read stick lengths directly - no need to first read count since we can get it from the list
+        List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
 
-        int r = Integer.parseInt(firstMultipleInput[0]);
+        List<Integer> result15 = cutTheSticks(arr);
 
-        int c = Integer.parseInt(firstMultipleInput[1]);
-
-        long result14 = node(r, c);
-
-        System.out.println("Result: " + result14);
-
-
-
-
-
-
-
-
+        System.out.println("Sequence of stick counts:");
+        result15.forEach(System.out::println);
 
         bufferedReader.close();
 
