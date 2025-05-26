@@ -1,7 +1,9 @@
 package org.assessment_preparation;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,6 +19,7 @@ import static org.assessment_preparation.palindrome.Palindrome.isPalindrome;
 import static org.assessment_preparation.palindrome.Palindrome.isPermutationOfPalindrome;
 import static org.assessment_preparation.ptime_count.PrimeCount.primeCount;
 import static org.assessment_preparation.reverse_game.ReverseGame.newIndex;
+import static org.assessment_preparation.sherlock_array.sherlock_arr.balancedSums;
 import static org.assessment_preparation.strange_grid.StrangeGrid.node;
 import static org.assessment_preparation.summing_series.SummingSeries.summingSeries;
 import static org.assessment_preparation.twosum.TwoSum.twoSum;
@@ -66,14 +69,14 @@ public class Main {
         }
 // *** 5 - Balanced Brackets ***
         {
-        String input1 = "([]){}";
-        String input2 = "{[(])}";
-        String input3 = "((({{[[]]}})))";
+            String input1 = "([]){}";
+            String input2 = "{[(])}";
+            String input3 = "((({{[[]]}})))";
 
-        System.out.println(isBalanced(input1)); // true
-        System.out.println(isBalanced(input2)); // false
-        System.out.println(isBalanced(input3)); // true
-}
+            System.out.println(isBalanced(input1)); // true
+            System.out.println(isBalanced(input2)); // false
+            System.out.println(isBalanced(input3)); // true
+        }
 // *** 6a - isPalindrome ***
         String test1 = "mamam"; // true
         String test2 = "MAMam"; // true
@@ -183,11 +186,35 @@ public class Main {
         System.out.println("Sequence of stick counts:");
         result15.forEach(System.out::println);
 
+// *** 16 - Sherlock and Array ***
+
+        // 2
+        // 3
+        // 1 2 3
+        // 4
+        // 1 2 3 3
+        // > NO
+        // > YES
+
+        System.out.println("Task 16:");
+        System.out.println("Enter number of test cases:");
+
+        int testCases = Integer.parseInt(bufferedReader.readLine().trim());
+
+        for (int t16 = 0; t16 < testCases; t16++) {
+            System.out.println("Enter size of array:");
+            int n16 = Integer.parseInt(bufferedReader.readLine().trim());
+
+            System.out.println("Enter array elements separated by spaces:");
+            List<Integer> arr16 = Stream.of(bufferedReader.readLine().trim().split("\\s+"))
+                    .map(Integer::parseInt)
+                    .collect(Collectors.toList());
+
+            System.out.println(balancedSums(arr16));
+        }
+
+// Close bufferedReader at the very end after all input is done:
         bufferedReader.close();
-
-
-
-
-
     }
+
 }
