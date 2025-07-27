@@ -20,6 +20,7 @@ import static org.assessment_preparation.palindrome.Palindrome.isPermutationOfPa
 import static org.assessment_preparation.ptime_count.PrimeCount.primeCount;
 import static org.assessment_preparation.reverse_game.ReverseGame.newIndex;
 import static org.assessment_preparation.sherlock_array.sherlock_arr.balancedSums;
+import static org.assessment_preparation.sherlock_beast.DecentNumber.decentNumber;
 import static org.assessment_preparation.strange_grid.StrangeGrid.node;
 import static org.assessment_preparation.summing_series.SummingSeries.summingSeries;
 import static org.assessment_preparation.twosum.TwoSum.twoSum;
@@ -212,6 +213,45 @@ public class Main {
 
             System.out.println(balancedSums(arr16));
         }
+
+// *** 17 - Sherlock and the Beast ***
+//        Sherlock determines the key to removing the virus is to find the largest Decent Number having that number of digits.
+//        A Decent Number has the following properties:
+//        Its digits can only be 3's and/or 5's.
+//        The number of 3's it contains is divisible by 5.
+//        The number of 5's it contains is divisible by 3.
+//        It is the largest such number for its length.
+//        Print the decent number for the given length, or  if a decent number of that length cannot be formed. No return value is expected.
+//        The first line is an integer, , the number of test cases.
+//          The next  lines each contain an integer , the number of digits in the number to create.
+
+//        STDIN   Function
+//        -----   --------
+//        4       t = 4
+//        1       n = 1 (first test case)
+//        3       n = 3 (second test case)
+//        5
+//        11
+//
+//        > -1
+//        > 555
+//        > 33333
+//        > 55555533333
+
+        System.out.println("Task 17: Sherlock and the Beast");
+
+        System.out.println("Enter number of test cases:");
+        int t17 = Integer.parseInt(bufferedReader.readLine().trim());
+
+        for (int i = 0; i < t17; i++) {
+            System.out.println("Enter the number of digits:");
+            int n17 = Integer.parseInt(bufferedReader.readLine().trim());
+            decentNumber(n17);
+        }
+
+
+
+
 
 // Close bufferedReader at the very end after all input is done:
         bufferedReader.close();
