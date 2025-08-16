@@ -11,6 +11,7 @@ import static org.assessment_preparation.cutting_paper_squares.CuttingPaper.cutt
 import static org.assessment_preparation.balanced_brackets.BalancedBrackets.isBalanced;
 import static org.assessment_preparation.cells_game.GameWithCells.gameWithCells;
 import static org.assessment_preparation.cutting_sticks.CuttingSticks.cutTheSticks;
+import static org.assessment_preparation.largest_permutation.LargestPermutation.largestPermutation;
 import static org.assessment_preparation.latest_time_finder.LatestTimeFinder.findLatestTime;
 import static org.assessment_preparation.longest_sequence.LongestConsecutiveSequence.longestConsecutiveSequence;
 import static org.assessment_preparation.min_height_triangle.MinimumHeightTriangle.lowestTriangle;
@@ -249,8 +250,33 @@ public class Main {
             decentNumber(n17);
         }
 
+// *** 18 - Largest Permutation ***
+//
+// Input format (as on HackerRank):
+//   First line:  n k
+//   Second line: n distinct integers (permutation of 1..n)
+//
+// Example:
+//   5 1
+//   4 2 3 5 1
+//
+// Expected output:
+//   5 2 3 4 1
 
+        System.out.println("Task 18: Largest Permutation");
+        System.out.println("Enter n and k:");
+        String[] nk18 = bufferedReader.readLine().trim().split("\\s+");
+        int n18 = Integer.parseInt(nk18[0]);
+        int k18 = Integer.parseInt(nk18[1]);
 
+        System.out.println("Enter array elements separated by spaces:");
+        List<Integer> arr18 = Stream.of(bufferedReader.readLine().trim().split("\\s+"))
+                .map(Integer::valueOf)
+                .collect(Collectors.toList());
+
+        List<Integer> out18 = largestPermutation(k18, arr18);
+        System.out.println("Result:");
+        System.out.println(out18.stream().map(String::valueOf).collect(Collectors.joining(" ")));
 
 
 // Close bufferedReader at the very end after all input is done:
